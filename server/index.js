@@ -5,12 +5,14 @@ const app = express()
 const bodyParser = require("body-parser")
 const xroute = require("./routes/routes")
 const cors = require("cors")
+const dotenv = require("dotenv")
+dotenv.config()
 
 app.listen(3001, () => {
     console.log(`Example app listening at http://localhost:3001`)
   })
 
-const serverUrl = "mongodb+srv://shop:shop1234@cluster0.ofl1d.mongodb.net/shop?retryWrites=true&w=majority";
+const serverUrl = process.env.SERVER_URL;
 
 const connectionParams={
     useNewUrlParser: true,
