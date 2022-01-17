@@ -5,12 +5,13 @@ import Movie from './Movie';
 import { Routes, Route, Link} from "react-router-dom";
 import Button from '@mui/material/Button';
 import MovieCard from './MovieCard';
+import ActorCard from './ActorCard';
+import Search from './Search';
+import "./../App.css"
 
 
 function Card() {
-
 /*
-
     const movieURL ="http://localhost:3001/home/movie"
 
     const [card, setCard] = useState([]);
@@ -29,26 +30,26 @@ function Card() {
 */
     return (
         <div className='container'>
-            <div className='header-container'>
+
+            <div className='head-container'>
+                <div className='button-container'>
+                    <Button  as= {Link} to="/movie"  size = "large"variant="contained" className='link-text' >
+                        Movies
+                    </Button>
+                    <Button as= {Link} to="/actor" size = "large"variant="contained" className='link-text' >
+                        Actors
+                    </Button>
+                </div>
+                <div className='search-container'>
+                    <Search />
+                </div>
             </div>
+
             <div className='body-container'>
-            </div>
-            
-            <Button  as= {Link} to="/movie/"  size = "large"variant="contained" >
-                Movies
-            </Button>
-
-            <Button as= {Link} to="/actor/" size = "large"variant="contained" >
-                Actors
-            </Button>
-
-            <Routes>
-                <Route path ="/movie/*" element={<Movie />} />
-                <Route path ="/actor/*" element={<Actor />} />
-            </Routes>
-
-            <div className='footer-container'>
-                
+                <Routes>
+                    <Route path ="/movie/*" element={<Movie />} />
+                    <Route path ="/actor/*" element={<Actor />} />
+                </Routes>
             </div>
         </div>
     )
@@ -63,3 +64,9 @@ export default Card;
 
 //btüün hepsini buraya yaz route ve linklerin aynı routesin içinde olsun
 
+/*
+{card.map(info => (
+                    <Route path ={info._id}element= {<ActorCard />} />  
+                ))}
+
+                */

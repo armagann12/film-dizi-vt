@@ -9,7 +9,7 @@ function MovieCard() {
     const parseId = JSON.parse(stringfyId)
     const Id = parseId["*"];
 
-    const movieURL ="http://localhost:3001/home/movie/" + Id;
+    const movieURL ="http://localhost:3001/home/movie/" + Id
     const [movieCard, setMovieCard] = useState([]);
 
    useEffect(() => {
@@ -25,11 +25,18 @@ function MovieCard() {
 }
     return (
         <div>
-            <div>
+            <div className='name-container'>
                 <h1>{movieCard.name}</h1>
-                <h2>{movieCard.describtion}</h2>
-                <h2>HEy</h2>
-            </div>
+            </div> 
+
+            <div className='middle-container'>
+                <div className='describtion-container'>
+                    <h2>{movieCard.describtion}</h2>
+                </div>
+
+                <div className='image-container'>
+                </div>
+            </div> 
         </div>
     )
 }

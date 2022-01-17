@@ -9,7 +9,7 @@ function Search() {
 
     const [actor, setActor] = useState([]);
     const [filteredData, setFilteredData] =useState([]);
-
+    
    useEffect(() => {
        allFunc();
    }, [])
@@ -27,7 +27,11 @@ function Search() {
         const filtered = actor.filter((val) =>{
             return val.name.toLowerCase().includes(search.toLowerCase())
         })
-        setFilteredData(filtered)
+        if(search === ""){
+            setFilteredData([])
+        }else{
+            setFilteredData(filtered)
+        }
     }
 
     return (
@@ -38,7 +42,7 @@ function Search() {
                 {filteredData.slice(0, 15).map(info => (
                     <div>   
                     <ListItem key = {info._id}>
-                        <ListItemButton>
+                        <ListItemButton as= {Link} to={`/actor/${info._id}`}>
                             <ListItemText>{info.name}</ListItemText>
                         </ListItemButton>
                     </ListItem>
@@ -57,4 +61,4 @@ export default Search
 //</a>
 
 
-//as = {Link} to ={`/actor/${info._id}`
+//as = {Link} to ={`/actor/${info._id}`}

@@ -7,9 +7,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <div className='search-bar'>
-          <Search />
-        </div>
         <Card />
       </Router>
     </div>
