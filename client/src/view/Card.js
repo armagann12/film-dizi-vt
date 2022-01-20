@@ -29,8 +29,7 @@ function Card() {
 }
 */
     return (
-        <div className='container'>
-
+        <div>
             <div className='head-container'>
                 <div className='button-container'>
                     <Button  as= {Link} to="/movie"  size = "large"variant="contained" className='link-text' >

@@ -3,7 +3,7 @@ import {useEffect, useState} from "react"
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import { CardActionArea } from '@mui/material';
+import { CardActionArea, Grid } from '@mui/material';
 import ActorCard from './ActorCard';
 import { Routes, Route, Link, Outlet, useParams } from 'react-router-dom';
 import "./../App.css"
@@ -32,16 +32,18 @@ function Actor() {
 }
     return (
         <div>
-            {Param == "" &&(
-            <div>
+            {Param === "" &&(
+            <div className='title-container'>
                 <h1>Actors</h1>
             </div>
             )}
+            <div className='cards'>
             {actor.map(info => (  
                 <div>
-                    {Param == "" &&(
-                    <div>
-                        <Card key = {info._id} sx={{ maxWidth: 200 }}>
+                    {Param === "" &&(
+                    <div className='card-container'>
+                    
+                        <Card key = {info._id} sx={{ maxWidth: 220 }}>
                             <CardActionArea as= {Link} to= {info._id} className='link-text'>
                             <CardMedia
                                 component="img"
@@ -58,13 +60,18 @@ function Actor() {
                         </Card>
                     </div>
                     )}
-                    <div>
-                        <Routes>
-                            <Route path ={info._id}element= {<ActorCard />} /> 
-                        </Routes>  
-                    </div>       
-                </div>   
+                          
+                </div>
             ))}
+            </div>
+            {actor.map(info => (  
+                <div>
+                <Routes>
+                    <Route path ={info._id}element= {<ActorCard />} /> 
+                </Routes>  
+                </div>    
+            ))}
+
         </div>
     )
 }

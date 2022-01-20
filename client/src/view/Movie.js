@@ -31,15 +31,16 @@ function Movie() {
     return (
         <div>
             {Param == "" &&(
-            <div>
+            <div className='title-container'>
                 <h1>Movies</h1>
             </div>
             )}
+            <div className='cards'>
             {movie.map(info => (
                 <div>
                     {Param == "" &&(
-                    <div>
-                        <Card key= {info._id} sx={{ maxWidth: 200 }}>
+                    <div className='card-container'>
+                        <Card key= {info._id} sx={{ maxWidth: 220 }}>
                             <CardActionArea as= {Link} to= {info._id} className='link-text'>
                             <CardMedia
                                 component="img"
@@ -50,18 +51,21 @@ function Movie() {
                             <CardContent>
                                 <div>
                                     <h1>{info.name}</h1>
-                                    <h2>{info._id}</h2>
                                 </div>
                             </CardContent>
                             </CardActionArea>
                         </Card>
                     </div>
                     )}
-                    <div>
-                        <Routes>
-                            <Route path = {info._id} element= {<MovieCard />} ></Route>
-                        </Routes>
-                    </div>
+                    
+                </div>
+            ))}
+            </div>
+            {movie.map(info => ( 
+                <div>
+                <Routes>
+                    <Route path = {info._id} element= {<MovieCard />} ></Route>
+                </Routes>
                 </div>
             ))}
         </div>

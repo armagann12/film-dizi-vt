@@ -25,19 +25,19 @@ function ActorCard() {
     }).then(data =>setActorCard(data))
 }
     return (
-        <div>
+        <div className='page'>
             <div className='name-container'>
                 <h1>{actorCard.name}</h1>
             </div>
 
-            <div className='middle-container'>
-                <div className='describtion-container'>
-                    <h2>{actorCard.describtion}</h2>
-                </div>
-
-                <div className='image-container'>
-                </div>
+            <div className='describtion-container'>
+                <h1>{actorCard.describtion}</h1>
             </div>
+
+            <div className='image-container'>
+                <h1>img</h1>
+            </div>
+            
         </div>
     )
 }
