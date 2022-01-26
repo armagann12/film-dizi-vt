@@ -2,7 +2,7 @@ const Actor = require("./../model/actorModel")
 
 exports.getActor = async (req, res) =>  {
     try{
-        const actor= await Actor.findById(req.params.id)
+        const actor= await Actor.findById(req.params.id).populate("movies") //populate
         res.json(actor);
     }catch(err){
         res.status(500).json({message: err.message})

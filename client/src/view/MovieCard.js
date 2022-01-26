@@ -23,6 +23,8 @@ function MovieCard() {
         }
     }).then(data =>setMovieCard(data))
 }
+    console.log(movieCard)
+    console.log(movieCard.actors)
     return (
         <div className='page'>
             <div className='name-container'>

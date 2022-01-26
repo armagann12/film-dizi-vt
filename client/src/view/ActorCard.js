@@ -24,9 +24,13 @@ function ActorCard() {
         }
     }).then(data =>setActorCard(data))
 }
+    console.log(actorCard)
+    console.log(actorCard.movies)
     return (
         <div className='page'>
             <div className='name-container'>
+                <h1>{actorCard.name}</h1>
+                <h1>hey</h1>
                 <h1>{actorCard.name}</h1>
             </div>
 

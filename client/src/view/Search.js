@@ -2,6 +2,7 @@ import React from 'react'
 import { ListItem, ListItemButton, ListItemText, TextField } from '@mui/material'
 import {useState, useEffect } from "react"
 import { Link } from 'react-router-dom';
+import "./../App.css"
 
 function Search() {
 
@@ -41,8 +42,8 @@ function Search() {
             <div>
                 {filteredData.slice(0, 15).map(info => (
                     <div>   
-                    <ListItem key = {info._id}>
-                        <ListItemButton as= {Link} to={`/actor/${info._id}`}>
+                    <ListItem classname= "se" key = {info._id}>
+                        <ListItemButton  as= {Link} to={`/actor/${info._id}`}>
                             <ListItemText>{info.name}</ListItemText>
                         </ListItemButton>
                     </ListItem>

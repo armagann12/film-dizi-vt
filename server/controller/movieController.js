@@ -2,7 +2,7 @@ const Movie = require("../model/movieModel")
 
 exports.getMovie = async (req, res) =>  {
     try{
-        const movie= await Movie.findById(req.params.id)
+        const movie= await Movie.findById(req.params.id).populate("actors")
         res.json(movie);
     }catch(err){
         res.status(500).json({message: err.message})

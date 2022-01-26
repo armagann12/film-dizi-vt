@@ -1,0 +1,7 @@
+Client Side Add:
+
+-Search bar problem
+
+-Better ui with bg color card color
+
+-Movies on Actors Actors on Movies bottom of the page card by card
